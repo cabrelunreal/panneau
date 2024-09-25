@@ -5,47 +5,139 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panneau Lumineux</title>
     <style>
-        form{
-            width: 30%;
-            margin: auto;
-            border: 1px solid #e7e4e4;
-            padding: 4px 12px;
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
-        input[type="text"]{
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        form {
+            background-color: #fff;
             width: 100%;
-            padding-top: 4px;
+            max-width: 400px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ddd;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 16px;
+            color: #555;
+        }
+
+        input[type="text"], input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
             border-radius: 4px;
-            border: 1px solid #e7e4e4;
+            border: 1px solid #ddd;
+            font-size: 16px;
         }
 
-        input[type="text"]:hover{
-            outline: #a3a2a2;
+        input[type="text"] {
+            background-color: #f9f9f9;
+            color: #333;
         }
 
-        .one, .two{
-            padding-top: 3px;
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #007BFF;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .form-description {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #888;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+                height: auto;
+                justify-content: flex-start;
+                align-items: flex-start;
+            }
+
+            form {
+                padding: 15px;
+                width: 100%;
+                box-shadow: none;
+                border: none;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            label {
+                font-size: 14px;
+            }
+
+            input[type="text"], input[type="submit"] {
+                font-size: 14px;
+                padding: 8px;
+            }
         }
     </style>
 </head>
 <body>
-    <div style="padding-top: 120px;">
-        <form action="" style="border-radius: 4px; padding-top: 8px; padding-bottom: 8px;">
-            <div style="text-align: center;">
-                <h2>PANNEAU LUMINEUX</h2>
-            </div>
-            <div class="one" style="padding-top: 20px;">
-                <label for="" style="font-size: 14px;">Entrez le nom de votre entreprise:</label><br>
-                <input type="text" name="" id="" placeholder="veillez entrer le nom de votre entreprise" style="padding: 6px 3px; width: 100%">
-            </div>
-            <div class="two" style="padding-top: 20px;">
-                <label for="" style="font-size: 14px;">Entrez le message a afficher</label><br>
-                <input type="text" name="" id="" placeholder="veillez entrer votre message"  style="padding: 6px 3px; padding-bottom: 30px; width: 100%">
-            </div>
-            <div style="padding-top: 20px;">
-                <input type="submit" value="Envoyer au Paneau" style="padding: 5px 0; width: 100%">
-            </div>
-        </form>
-    </div>
+    <form action="">
+        <h2>PANNEAU LUMINEUX</h2>
+        <p class="form-description">Veuillez entrer les informations ci-dessous pour afficher sur le panneau lumineux.</p>
+        
+        <div class="form-group">
+            <label for="company-name">Entrez le nom de votre entreprise:</label>
+            <input type="text" id="company-name" name="company-name" placeholder="Veuillez entrer le nom de votre entreprise">
+        </div>
+
+        <div class="form-group">
+            <label for="message">Entrez le message à afficher:</label>
+            <input type="text" id="message" name="message" placeholder="Veuillez entrer votre message">
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Envoyer au Panneau">
+        </div>
+    </form>
 </body>
 </html>
